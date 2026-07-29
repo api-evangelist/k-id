@@ -1,0 +1,35 @@
+generated: '2026-07-20'
+method: derived
+source: derived from docs.k-id.com API + events documentation
+standards:
+- id: oauth2
+  conforms: false
+  evidence: API uses static per-product bearer API keys, not OAuth2.
+- id: openid-connect
+  conforms: false
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: Errors use a custom { error, errorMessage } envelope, not application/problem+json.
+- id: hmac-sha256-webhook-signing
+  conforms: true
+  evidence: Webhooks are signed with HMAC-SHA256 over timestamp + raw body (X-Signature-Hmac-Sha256).
+- id: http-bearer-auth
+  conforms: true
+  evidence: Authorization Bearer {api-key} per RFC 6750 usage pattern.
+- id: rfc8594-sunset-header
+  conforms: false
+  evidence: Deprecations announced via changelog; no Sunset/Deprecation header documented.
+compliance_domains:
+  note: >-
+    k-ID's product encodes third-party regulatory regimes on behalf of
+    customers (this is its business domain, not a claim of k-ID's own
+    certifications). Covered regimes include COPPA (US), GDPR-Kids (EU),
+    UK Age Appropriate Design Code, UK Online Safety Act, Brazil ECA Digital,
+    and Australia Online Safety / social media minimum age.
+  regimes:
+  - COPPA
+  - GDPR-Kids
+  - UK AADC
+  - UK Online Safety Act
+  - Brazil ECA Digital
+  - Australia Online Safety

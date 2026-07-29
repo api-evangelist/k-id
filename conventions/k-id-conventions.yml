@@ -1,0 +1,51 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.k-id.com/api/overview
+docs: https://docs.k-id.com/api/overview
+api_style:
+  paradigm: HTTP RPC
+  url_pattern: https://{host}/api/v1/{method}
+  get: arguments passed as query parameters
+  post: arguments passed as a JSON request body
+authentication:
+  style: bearer-api-key
+  header: 'Authorization: Bearer {api-key}'
+  scope: per-product
+  see: authentication/k-id-authentication.yml
+versioning:
+  style: uri-path
+  current: v1
+  see: lifecycle/k-id-lifecycle.yml
+pagination:
+  documented: false
+  notes: RPC methods operate on single resources/sessions; no cursor/offset pagination surface is documented.
+error_envelope:
+  shape: '{ "error": "<CODE>", "errorMessage": "<message>" }'
+  see: errors/k-id-problem-types.yml
+rate_limit_signaling:
+  live_rps: 500
+  test_rps: 10
+  age_flow_live_rps: 100
+  age_flow_test_rps: 20
+  exceeded_status: 429
+  response_body_on_429: none
+  headers: none documented
+  guidance: Implement exponential backoff with jitter; cache responses where appropriate.
+  see: https://docs.k-id.com/api/rate-limits
+idempotency:
+  request_idempotency: false
+  notes: >-
+    The API does not document a request Idempotency-Key. Idempotency is a
+    consumer-side webhook concern — events are delivered at-least-once and must
+    be de-duplicated on the receiver using the data.id field.
+  webhook_dedup_field: data.id
+  see: asyncapi/k-id-webhooks.yml
+webhooks:
+  transport: HTTPS POST
+  signature: HMAC-SHA256 over timestamp + raw body, keyed by per-product webhook secret
+  headers:
+  - X-Signature-Timestamp
+  - X-Signature-Hmac-Sha256
+  - X-Event-Type
+  delivery_guarantee: at-least-once
+  see: asyncapi/k-id-webhooks.yml

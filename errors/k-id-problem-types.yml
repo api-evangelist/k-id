@@ -1,0 +1,48 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.k-id.com/api/error-handling
+docs: https://docs.k-id.com/api/error-handling
+format: custom-json
+envelope:
+  description: >-
+    Errors return a consistent JSON body with an `error` machine code and a
+    human-readable `errorMessage`. Rate-limit (429) responses have no body.
+  fields:
+    error: Machine-readable error code (e.g. UNAUTHORIZED)
+    errorMessage: Human-readable error message
+  example: |
+    {
+      "error": "ERROR_CODE",
+      "errorMessage": "Human-readable error message"
+    }
+http_status_codes:
+- {status: 200, meaning: OK, when: Request successful}
+- {status: 400, meaning: Bad Request, when: Invalid request parameters}
+- {status: 401, meaning: Unauthorized, when: Invalid or missing API key}
+- {status: 429, meaning: Too Many Requests, when: Rate limit exceeded (no response body)}
+- {status: 500, meaning: Internal Server Error, when: Server error}
+problems:
+- code: UNAUTHORIZED
+  status: 401
+  title: Unauthorized
+  description: Invalid or missing API key.
+  causes:
+  - Missing Authorization header
+  - Invalid API key format
+  - Expired API key
+  remediation: Verify the API key is correct, active, and sent as a bearer token.
+- code: INVALID_INPUT
+  status: 400
+  title: Request validation failed
+  description: One or more request fields failed validation, or a referenced resource could not be found.
+  remediation: Correct the invalid field values; for expired/deleted verifications, create a new verification.
+- code: INVALID_EMAIL
+  status: 400
+  title: Invalid or missing email
+  description: No email address was supplied and none could be resolved for the trusted adult.
+  remediation: Supply a valid email address on the challenge/send-email request.
+- code: INTERNAL_ERROR
+  status: 500
+  title: Internal server error
+  description: An unexpected server-side error occurred.
+  remediation: Retry after a delay with backoff; contact support if it persists; check the status page.

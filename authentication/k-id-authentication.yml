@@ -1,0 +1,37 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.k-id.com/api/authentication
+docs: https://docs.k-id.com/api/authentication
+summary:
+  types:
+  - http
+  api_key_in:
+  - header
+  oauth2_flows: []
+  notes: >-
+    Server-to-server only. A per-Product k-ID API key is issued in Compliance
+    Studio (portal.k-id.com) and presented as an HTTP bearer token. Keys must
+    never be exposed in browsers or mobile clients; all calls originate from
+    the integrator's servers over HTTPS.
+schemes:
+- name: bearerAuth
+  type: http
+  scheme: bearer
+  in: header
+  header: Authorization
+  format: 'Authorization: Bearer {api-key}'
+  scope: per-product
+  issued_via: https://portal.k-id.com
+  sources:
+  - https://docs.k-id.com/api/authentication
+webhook_auth:
+  scheme: hmac-sha256
+  description: >-
+    Inbound webhooks are authenticated by verifying an HMAC-SHA256 signature of
+    the UNIX timestamp concatenated with the raw request body, keyed by the
+    per-Product webhook secret configured in Compliance Studio.
+  headers:
+  - X-Signature-Timestamp
+  - X-Signature-Hmac-Sha256
+  - X-Event-Type
+  source: https://docs.k-id.com/events/overview

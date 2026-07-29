@@ -1,0 +1,46 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.k-id.com/events/overview
+docs: https://docs.k-id.com/events/overview
+spec_type: Webhooks
+transport:
+  protocol: HTTPS POST
+  direction: k-ID Engine -> integrator endpoint
+  config: Per Product, in Compliance Studio Developer Settings
+  content_type: application/json
+envelope:
+  fields:
+    eventType: The type of event that occurred.
+    data: The data associated with the event.
+  headers:
+    X-Event-Type: The event type (also present in the JSON body).
+security:
+  scheme: HMAC-SHA256
+  signed_content: X-Signature-Timestamp value concatenated with the raw request body
+  key: per-product webhook secret (configured in Compliance Studio)
+  headers:
+    X-Signature-Timestamp: Request timestamp, UNIX epoch seconds.
+    X-Signature-Hmac-Sha256: Lowercase hex HMAC-SHA256 of (timestamp + body) keyed by the webhook secret.
+  on_invalid: Reject with HTTP 401; accept valid requests with HTTP 200.
+delivery:
+  guarantee: at-least-once
+  dedup_field: data.id
+events:
+- name: Challenge.StateChange
+  description: Emitted when a parental consent challenge changes state.
+- name: Verification.Result
+  description: Emitted with the result of a verification attempt.
+- name: Account.Delete
+  description: Emitted when an account is deleted.
+- name: AgeAssurance.Result
+  description: Emitted with the result of an Age Assurance evaluation.
+  deprecated: true
+  replaced_by: Verification.Result
+- name: Session.ChangePermissions
+  description: Emitted when session permissions are modified by a parent.
+- name: Session.Delete
+  description: Emitted when a session is deleted.
+- name: Test
+  description: Used to verify that the webhook is working correctly.
+notes:
+  - The official k-id-webhooks Agent Skill additionally references Verification.Revoke and ParentalConsent.Granted handlers.

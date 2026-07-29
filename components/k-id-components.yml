@@ -1,0 +1,28 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.k-id.com/api/overview
+docs: https://docs.k-id.com/get-started/overview
+description: >-
+  k-ID ships hosted, prebuilt compliance widgets rather than a client-side
+  element library. The server-side API mints signed, single-use widget URLs
+  that the integrator opens in a browser/webview; the widget runs the full
+  compliance flow and posts results back via redirect/postMessage and webhooks.
+families:
+- family: Compliance Widgets (hosted)
+  loader: server-generated signed URLs (no client JS library required)
+  components:
+  - name: Age Gate
+    generator: /api/v1/widget/generate-age-gate-url
+    description: Hosted age-gate flow that classifies a user into an age category.
+  - name: Direct Notices
+    generator: /api/v1/widget/generate-direct-notices-url
+    description: Hosted flow that presents jurisdiction-specific direct notices.
+  - name: Manage Session Permissions
+    generator: /api/v1/widget/generate-manage-session-permissions-url
+    description: Hosted surface for parents/guardians to manage session permissions.
+  - name: End-to-End (E2E)
+    generator: /api/v1/widget/generate-e2e-url
+    description: Hosted end-to-end compliance flow URL.
+notes:
+  - Integration path is "pre-built widgets for complete compliance flows" vs "custom API-based workflows".
+  - Distinct from SDKs (k-ID ships no first-party client SDK package).

@@ -1,0 +1,38 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.k-id.com/changelog
+docs: https://docs.k-id.com/changelog
+scheme: dated
+entries:
+- date: '2026-07-08'
+  breaking: false
+  additions: true
+  highlights: New credit-card-only age verification endpoint that bypasses automatic method selection.
+- date: '2026-06-22'
+  breaking: false
+  additions: true
+  highlights: Age-gate check now accepts redirect URLs for browser handoffs, returning status parameters after challenge completion.
+- date: '2026-05-18'
+  breaking: false
+  additions: true
+  highlights: Official k-ID Agent Skills bundle for AI coding agents — eight focused skills covering COPPA, GDPR-Kids, UK AADC and more.
+- date: '2026-05-06'
+  breaking: false
+  additions: true
+  highlights: AI products quick-start guide covering end-to-end AI product integration and parental consent collection.
+- date: '2026-04-30'
+  breaking: false
+  additions: false
+  highlights: Rate limits documented — 500 RPS live / 10 RPS test for the k-ID API.
+- date: '2026-04-22'
+  breaking: false
+  additions: true
+  highlights: Mock Providers toggle, reorderable verification methods, and COPPA 2026 guide; Test Mode simulator for verification scenarios.
+- date: '2026-04-20'
+  breaking: false
+  additions: true
+  highlights: Verification methods can be configured as fallbacks, appearing only after unsuccessful initial attempts.
+- date: '2026-04-01'
+  breaking: false
+  additions: true
+  highlights: Short URL (shortUrl) field added to age verification API responses for QR codes and cross-device flows.

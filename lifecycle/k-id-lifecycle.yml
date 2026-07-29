@@ -1,0 +1,27 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.k-id.com/api/overview
+versioning:
+  scheme: uri-path
+  current: v1
+  pattern: https://{host}/api/v1/{method}
+  docs: https://docs.k-id.com/api/overview
+deprecation:
+  policy_url: https://docs.k-id.com/changelog
+  notes: >-
+    Deprecations are announced in the changelog. The AgeAssurance.Result webhook
+    event is deprecated and replaced by Verification.Result.
+  deprecated_features:
+  - feature: AgeAssurance.Result webhook event
+    replaced_by: Verification.Result
+    source: https://docs.k-id.com/events/overview
+sla:
+  test_data_retention: >-
+    Verifications that remain PENDING for more than 2 weeks are deleted; a
+    subsequent get-status returns 400 INVALID_INPUT and a new verification must
+    be created.
+status_page: https://status.k-id.com
+uptime_target: '99.9%'
+environments:
+- {mode: live, host: game-api.k-id.com}
+- {mode: test, host: game-api.test.k-id.com}

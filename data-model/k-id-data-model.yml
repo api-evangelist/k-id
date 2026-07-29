@@ -1,0 +1,33 @@
+generated: '2026-07-20'
+method: derived
+source: derived from https://docs.k-id.com API + events documentation
+note: >-
+  k-ID publishes no OpenAPI spec; this entity graph is derived from the
+  documented RPC methods, webhook event payloads, and the object references in
+  the docs. Relationships are inferred, not authoritative.
+entities:
+- name: Product
+  description: A configured integration in Compliance Studio; owns the API key and webhook secret.
+  key_fields: [productId]
+- name: Session
+  description: A k-ID session representing a player and their resolved permissions in a jurisdiction.
+  key_fields: [sessionId, jurisdiction]
+- name: Challenge
+  description: A verifiable parental consent (VPC) challenge that changes state until resolved.
+  key_fields: [id, status]
+- name: Verification
+  description: An age verification attempt with a result status (facial/ID/credit-card/AgeKey/etc.).
+  key_fields: [id, status]
+- name: Guardian
+  description: A trusted adult / parent who approves permissions for a player.
+  key_fields: []
+- name: Permission
+  description: A grantable capability (feature) governed by jurisdiction and guardian decisions.
+  key_fields: []
+relationships:
+- {from: Session, to: Product, type: belongs_to, via: productId}
+- {from: Challenge, to: Session, type: belongs_to, via: sessionId}
+- {from: Verification, to: Session, type: belongs_to, via: sessionId}
+- {from: Session, to: Permission, type: has_many, via: permissions}
+- {from: Challenge, to: Guardian, type: has_one, via: trustedAdult}
+- {from: Session, to: Guardian, type: has_one, via: guardian}

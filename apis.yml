@@ -1,8 +1,16 @@
 aid: k-id
 name: k-ID
-description: k-ID is a company surfaced as a portfolio company of a16z, lightspeed-venture-partners and
-  added to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment
-  pipeline.
+description: >-
+  k-ID is a compliance platform that lets games, social apps, AI products, and
+  commerce deliver age-appropriate experiences across 200+ jurisdictions. Its
+  Compliance Development Kit (CDK) encodes auto-updating regulatory logic for
+  regimes like COPPA, GDPR-Kids, the UK Age Appropriate Design Code and Online
+  Safety Act, Brazil's ECA Digital, and Australia's minimum-age rules, while
+  AgeKit and AgeKit+ provide privacy-preserving age assurance (facial age
+  estimation, ID checks, credit card, AgeKey reusable credentials) and Family
+  Connect handles verifiable parental consent. Developers integrate through the
+  k-ID HTTP RPC API (game-api.k-id.com) using bearer API keys, hosted widget
+  URLs, HMAC-signed webhooks, and official Agent Skills for AI coding tools.
 url: https://raw.githubusercontent.com/api-evangelist/k-id/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -11,14 +19,121 @@ x-backed-by:
 - lightspeed-venture-partners
 x-tier: stub
 x-tier-reason: portfolio-lead
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://avatars.githubusercontent.com/kidentify
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-20'
 tags:
 - Company
-apis: []
+- Age Verification
+- Age Assurance
+- Compliance
+- Parental Consent
+- Child Safety
+- Identity
+- Privacy
+- Regulatory Technology
+- Gaming
+apis:
+- name: k-ID API
+  description: >-
+    HTTP RPC-style API for age gates, age verification, verifiable parental
+    consent, k-ID sessions, and permission management. Methods take the form
+    https://game-api.k-id.com/api/v1/{method} with bearer API-key auth; GET
+    methods use query parameters and POST methods use a JSON body.
+  humanURL: https://docs.k-id.com/api/overview
+  baseURL: https://game-api.k-id.com/api/v1/
+  tags:
+  - Age Verification
+  - Parental Consent
+  - Compliance
+  properties:
+  - type: Documentation
+    url: https://docs.k-id.com
+  - type: APIReference
+    url: https://docs.k-id.com/api/overview
+  - type: Authentication
+    url: authentication/k-id-authentication.yml
+  - type: Webhooks
+    url: asyncapi/k-id-webhooks.yml
+  - type: ErrorCatalog
+    url: errors/k-id-problem-types.yml
+  - type: RateLimits
+    url: https://docs.k-id.com/api/rate-limits
+common:
+- type: DeveloperPortal
+  url: https://portal.k-id.com
+- type: Documentation
+  url: https://docs.k-id.com
+- type: APIReference
+  url: https://docs.k-id.com/api/overview
+- type: GettingStarted
+  url: https://docs.k-id.com/get-started/overview
+- type: Support
+  url: https://k-id.zendesk.com/hc/en-us
+- type: Blog
+  url: https://product.k-id.com
+- type: GitHubOrganization
+  url: https://github.com/kidentify
+- type: TermsOfService
+  url: https://k-id.com/terms-of-service
+- type: PrivacyPolicy
+  url: https://k-id.com/privacy-policy
+- type: Login
+  url: https://portal.k-id.com
+- type: StatusPage
+  url: https://status.k-id.com
+- type: Deprecation
+  url: lifecycle/k-id-lifecycle.yml
+- type: TrustCenter
+  url: https://security.k-id.com
+- type: Authentication
+  url: authentication/k-id-authentication.yml
+- type: LLMsTxt
+  url: llms/k-id-llms.txt
+- type: ChangeLog
+  url: changelog/k-id-changelog.yml
+- type: Lifecycle
+  url: lifecycle/k-id-lifecycle.yml
+- type: ErrorCatalog
+  url: errors/k-id-problem-types.yml
+- type: Conventions
+  url: conventions/k-id-conventions.yml
+- type: Conformance
+  url: conformance/k-id-conformance.yml
+- type: DataModel
+  url: data-model/k-id-data-model.yml
+- type: Sandbox
+  url: sandbox/k-id-sandbox.yml
+- type: Components
+  url: components/k-id-components.yml
+- type: Webhooks
+  url: asyncapi/k-id-webhooks.yml
+- type: MCPServer
+  url: mcp/k-id-mcp.yml
+- type: AgentSkill
+  url: skills/_index.yml
+- type: DomainSecurity
+  url: security/k-id-domain-security.yml
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+x-enrichment:
+  date: '2026-07-20'
+  status: enriched
+  artifacts_added: 23
+  pass: local-v1

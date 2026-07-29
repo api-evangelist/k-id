@@ -1,0 +1,34 @@
+generated: '2026-07-20'
+method: searched
+source: https://github.com/kidentify/skills
+docs: https://docs.k-id.com/get-started/agent-skills
+note: >-
+  Official k-ID Agent Skills, copied verbatim from the kidentify/skills
+  repository (Apache-2.0). These are the eight core API-integration skills of
+  k-ID's published bundle; the repo also ships neimo/regulatory skills not
+  mirrored here. Spec: https://agentskills.io/specification
+skills:
+- file: k-id-integration.md
+  name: k-id-integration
+  description: Orchestrator skill that routes a k-ID integration to the right feature skills and enforces the correct end-to-end flow.
+- file: k-id-server-trust-boundary.md
+  name: k-id-server-trust-boundary
+  description: Keeps the API key server-side, proxies all client-bound calls, enforces permission checks, and catches test-vs-prod key/URL mismatches.
+- file: k-id-age-gate.md
+  name: k-id-age-gate
+  description: Implements the initial age gate — requirements, age-category check, and default permissions per jurisdiction.
+- file: k-id-age-verification.md
+  name: k-id-age-verification
+  description: Implements AgeKit+ age verification (facial estimation, ID, credit card, AgeKey) and the client postMessage/redirect handling.
+- file: k-id-consent-and-challenges.md
+  name: k-id-consent-and-challenges
+  description: Implements verifiable parental consent (VPC) challenge creation, email/OTP, and status polling.
+- file: k-id-sessions-and-permissions.md
+  name: k-id-sessions-and-permissions
+  description: Enforces k-ID session permissions on client and server, including verifiedAgeThreshold permissions and /session/upgrade flows.
+- file: k-id-mobile-native.md
+  name: k-id-mobile-native
+  description: Adapts the k-ID integration patterns for native mobile apps.
+- file: k-id-webhooks.md
+  name: k-id-webhooks
+  description: Implements a webhook receiver with HMAC-SHA256 signature verification, timestamp tolerance, idempotency, and per-event handlers.

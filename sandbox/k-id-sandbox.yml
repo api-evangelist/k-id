@@ -1,0 +1,31 @@
+generated: '2026-07-20'
+method: searched
+source: https://docs.k-id.com
+docs: https://docs.k-id.com/get-started/overview
+test_live_separation:
+  model: separate host + separate per-product key (test mode vs live mode)
+  live_host: https://game-api.k-id.com/api/v1/
+  test_host: https://game-api.test.k-id.com/api/v1/
+  rate_limits:
+    live_rps: 500
+    test_rps: 10
+    age_flow_live_rps: 100
+    age_flow_test_rps: 20
+mock_providers:
+  available: true
+  description: >-
+    Test Mode includes a Mock Providers toggle that simulates verification
+    scenarios (added 2026-04-22) so integrators can exercise success/failure
+    paths without a real age-assurance provider.
+test_endpoints:
+  description: >-
+    Test-only helper endpoints let integrators force state transitions in test
+    mode.
+  methods:
+  - path: /api/v1/test/set-challenge-status
+    description: Force a parental-consent challenge into a chosen status.
+  - path: /api/v1/test/set-age-verification-status
+    description: Force an age verification into a chosen result status.
+notes:
+  - Never invented — values captured verbatim from k-ID docs.
+  - k-ID publishes no fixed magic test card numbers; test scenarios are driven by the Mock Providers simulator and the test endpoints above.

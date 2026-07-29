@@ -1,0 +1,17 @@
+generated: '2026-07-20'
+method: searched
+source: https://security.k-id.com
+url: https://security.k-id.com
+platform: Vanta Trust Center
+evidence:
+- source: https://security.k-id.com
+  kind: trust-center
+  detail: Vanta-hosted Trust Center (og:title "Trust Center", canonical https://security.k-id.com), linked from k-id.com as the "Security & Privacy Center".
+certifications: []
+note: >-
+  A live Vanta Trust Center exists at security.k-id.com but its certification
+  list is rendered client-side (SPA) and could not be verified statically, so
+  no specific certifications are asserted here. GDPR is referenced throughout
+  k-ID's documentation, but as a regime k-ID helps customers meet rather than a
+  verified k-ID certification. No Compliance pointer emitted pending verified
+  certifications.
