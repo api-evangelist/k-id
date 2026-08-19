@@ -6,5 +6,14 @@
     "source_type": "DeveloperPortal",
     "file": "k-id-2026-07-25T223350.png",
     "bytes": 48067
+  },
+  {
+    "repo": "k-id",
+    "captured_at": "2026-08-17T123933",
+    "source_url": "https://k-id.com",
+    "source_type": "root-domain",
+    "file": "k-id-2026-08-17T123933.png",
+    "bytes": 116873,
+    "capture": "playwright-local"
   }
 ]

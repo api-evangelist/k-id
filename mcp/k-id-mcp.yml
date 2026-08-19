@@ -2,30 +2,73 @@ generated: '2026-07-20'
 method: derived
 status: candidate
 source: https://docs.k-id.com/api/overview
-note: >-
-  No official hosted/remote k-ID MCP server was found (k-ID ships official Agent
-  Skills instead — see skills/). This is a candidate tool list derived from the
-  documented HTTP RPC methods so an MCP wrapper can be generated. Not published.
+note: No official hosted/remote k-ID MCP server was found (k-ID ships official Agent Skills instead —
+  see skills/). This is a candidate tool list derived from the documented HTTP RPC methods so an MCP wrapper
+  can be generated. Not published.
 server:
   name: k-id
   transport: http
 tools:
-- {name: age_gate_get_requirements, description: Get age-gate requirements for a jurisdiction, source_operation: 'game-api.k-id.com/api/v1/age-gate/get-requirements'}
-- {name: age_gate_check_age_category, description: Check the age category for a user, source_operation: 'game-api.k-id.com/api/v1/age-gate/check-age-category'}
-- {name: age_gate_check, description: Run an age-gate check, source_operation: 'game-api.k-id.com/api/v1/age-gate/check'}
-- {name: age_gate_get_default_permissions, description: Get default permissions for a jurisdiction, source_operation: 'game-api.k-id.com/api/v1/age-gate/get-default-permissions'}
-- {name: session_get, description: Get a k-ID session, source_operation: 'game-api.k-id.com/api/v1/session/get'}
-- {name: session_upgrade, description: Upgrade a session, source_operation: 'game-api.k-id.com/api/v1/session/upgrade'}
-- {name: session_update_jurisdiction, description: Update a session jurisdiction, source_operation: 'game-api.k-id.com/api/v1/session/update-jurisdiction'}
-- {name: session_set_guardian_managed_permissions, description: Set guardian-managed session permissions, source_operation: 'game-api.k-id.com/api/v1/session/set-guardian-managed-session-permissions'}
-- {name: challenge_get, description: Get a parental-consent challenge, source_operation: 'game-api.k-id.com/api/v1/challenge/get'}
-- {name: challenge_get_status, description: Get challenge status, source_operation: 'game-api.k-id.com/api/v1/challenge/get-status'}
-- {name: challenge_send_email, description: Send a challenge email, source_operation: 'game-api.k-id.com/api/v1/challenge/send-email'}
-- {name: challenge_generate_otp, description: Generate a one-time passcode for a challenge, source_operation: 'game-api.k-id.com/api/v1/challenge/generate-otp'}
-- {name: age_verification_facial_estimation, description: Perform facial age estimation, source_operation: 'game-api.k-id.com/api/v1/age-verification/perform-facial-age-estimation'}
-- {name: age_verification_id, description: Perform ID verification, source_operation: 'game-api.k-id.com/api/v1/age-verification/perform-id-verification'}
-- {name: age_verification_credit_card, description: Perform credit-card age verification, source_operation: 'game-api.k-id.com/api/v1/age-verification/perform-credit-card-verification'}
-- {name: age_verification_access, description: Perform access age verification, source_operation: 'game-api.k-id.com/api/v1/age-verification/perform-access-age-verification'}
-- {name: age_verification_get_status, description: Get age verification status, source_operation: 'game-api.k-id.com/api/v1/age-verification/get-status'}
-- {name: widget_generate_age_gate_url, description: Generate a hosted age-gate widget URL, source_operation: 'game-api.k-id.com/api/v1/widget/generate-age-gate-url'}
-- {name: widget_generate_manage_permissions_url, description: Generate a manage-session-permissions widget URL, source_operation: 'game-api.k-id.com/api/v1/widget/generate-manage-session-permissions-url'}
+- name: age_gate_get_requirements
+  description: Get age-gate requirements for a jurisdiction
+  source_operation: game-api.k-id.com/api/v1/age-gate/get-requirements
+- name: age_gate_check_age_category
+  description: Check the age category for a user
+  source_operation: game-api.k-id.com/api/v1/age-gate/check-age-category
+- name: age_gate_check
+  description: Run an age-gate check
+  source_operation: game-api.k-id.com/api/v1/age-gate/check
+- name: age_gate_get_default_permissions
+  description: Get default permissions for a jurisdiction
+  source_operation: game-api.k-id.com/api/v1/age-gate/get-default-permissions
+- name: session_get
+  description: Get a k-ID session
+  source_operation: game-api.k-id.com/api/v1/session/get
+- name: session_upgrade
+  description: Upgrade a session
+  source_operation: game-api.k-id.com/api/v1/session/upgrade
+- name: session_update_jurisdiction
+  description: Update a session jurisdiction
+  source_operation: game-api.k-id.com/api/v1/session/update-jurisdiction
+- name: session_set_guardian_managed_permissions
+  description: Set guardian-managed session permissions
+  source_operation: game-api.k-id.com/api/v1/session/set-guardian-managed-session-permissions
+- name: challenge_get
+  description: Get a parental-consent challenge
+  source_operation: game-api.k-id.com/api/v1/challenge/get
+- name: challenge_get_status
+  description: Get challenge status
+  source_operation: game-api.k-id.com/api/v1/challenge/get-status
+- name: challenge_send_email
+  description: Send a challenge email
+  source_operation: game-api.k-id.com/api/v1/challenge/send-email
+- name: challenge_generate_otp
+  description: Generate a one-time passcode for a challenge
+  source_operation: game-api.k-id.com/api/v1/challenge/generate-otp
+- name: age_verification_facial_estimation
+  description: Perform facial age estimation
+  source_operation: game-api.k-id.com/api/v1/age-verification/perform-facial-age-estimation
+- name: age_verification_id
+  description: Perform ID verification
+  source_operation: game-api.k-id.com/api/v1/age-verification/perform-id-verification
+- name: age_verification_credit_card
+  description: Perform credit-card age verification
+  source_operation: game-api.k-id.com/api/v1/age-verification/perform-credit-card-verification
+- name: age_verification_access
+  description: Perform access age verification
+  source_operation: game-api.k-id.com/api/v1/age-verification/perform-access-age-verification
+- name: age_verification_get_status
+  description: Get age verification status
+  source_operation: game-api.k-id.com/api/v1/age-verification/get-status
+- name: widget_generate_age_gate_url
+  description: Generate a hosted age-gate widget URL
+  source_operation: game-api.k-id.com/api/v1/widget/generate-age-gate-url
+- name: widget_generate_manage_permissions_url
+  description: Generate a manage-session-permissions widget URL
+  source_operation: game-api.k-id.com/api/v1/widget/generate-manage-session-permissions-url
+deployment:
+  mode: none
+  verified: derived
+  tools: 19
+  checked: '2026-08-12'
+  source: catalog MCP census
