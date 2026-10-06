@@ -47,7 +47,7 @@ accessModel:
 image: https://avatars.githubusercontent.com/kidentify
 specificationVersion: '0.23'
 created: '2026-07-17'
-modified: '2026-07-20'
+modified: '2026-10-06'
 tags:
 - Company
 - Age Verification
@@ -97,6 +97,8 @@ apis:
   - type: RateLimits
     url: https://docs.k-id.com/api/rate-limits
 common:
+- url: https://k-id.com/news
+  type: Blog
 - type: Website
   url: https://www.k-id.com/
 - type: DeveloperPortal
