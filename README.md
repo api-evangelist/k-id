@@ -64,6 +64,109 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-k-ID is a company surfaced as a portfolio company of a16z, lightspeed-venture-partners and added to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+k-ID is a compliance platform that lets games, social apps, AI products, and commerce deliver age-appropriate experiences across 200+ jurisdictions. Its Compliance Development Kit (CDK) encodes auto-updating regulatory logic for regimes like COPPA, GDPR-Kids, the UK Age Appropriate Design Code and Online Safety Act, Brazil's ECA Digital, and Australia's minimum-age rules, while AgeKit and AgeKit+ provide privacy-preserving age assurance (facial age estimation, ID checks, credit card, AgeKey reusable credentials) and Family Connect handles verifiable parental consent. Developers integrate through the k-ID HTTP RPC API (game-api.k-id.com) using bearer API keys, hosted widget URLs, HMAC-signed webhooks, and official Agent Skills for AI coding tools.
 
-Backed by: a16z, lightspeed-venture-partners
+**Areas:** Company · Age Verification · Age Assurance · Compliance · Parental Consent · Child Safety · Identity · Privacy · RegTech · Gaming
+
+## k-ID on APIs.io
+
+Everything profiled for k-ID is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/k-id/](https://apis.io/providers/k-id/)** — or go straight to one of the APIs or properties below.
+
+### APIs (1)
+
+- [k-ID API](https://apis.io/apis/k-id/k-id-api/) — HTTP RPC-style API for age gates, age verification, verifiable parental consent, k-ID sessions, and permission management. Methods take the form…
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### AsyncAPI (1)
+
+Event-driven and webhook contracts.
+
+- [K Id Webhooks](https://apis.io/asyncapis/k-id/k-id-webhooks/)
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [k-id](https://apis.io/servers/k-id/k-id/)
+
+#### Security (3)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [K Id Authentication](https://apis.io/security/k-id/k-id-authentication/)
+- [K Id Domain Security](https://apis.io/security/k-id/k-id-domain-security/)
+- [K Id Trust Center](https://apis.io/security/k-id/k-id-trust-center/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.k-id.com/)
+- [Documentation](https://docs.k-id.com)
+- [Getting started](https://docs.k-id.com/get-started/overview)
+- [API reference](https://docs.k-id.com/api/overview)
+- [Support](https://k-id.zendesk.com/hc/en-us)
+- [Blog](https://k-id.com/news)
+- [Trust centre](https://security.k-id.com)
+- [Terms of service](https://k-id.com/terms-of-service)
+- [Privacy policy](https://k-id.com/privacy-policy)
+- [GitHub](https://github.com/kidentify)
+- [Status](https://status.k-id.com)
+
+## API Evangelist rating
+
+**Kin Score 43.9** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 73.2 |
+| Contract quality | 39.0 |
+| Contract governance | 4.5 |
+| Operational transparency | 50.0 |
+| Developer ergonomics | 59.5 |
+| Access clarity | 28.9 |
+
+**Agent readiness 28.8** — agent-ready
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | — |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | documented (partial credit) |
+| OpenAPI Examples | — |
+| Rate Limit Signal | documented (partial credit) |
+| Event Surface Described | yes |
+| Agent Skills | yes |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | na |
+
+**Regulatory alignment 29.4** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/k-id/](https://apis.io/providers/k-id/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for k-ID: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/k-id/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
